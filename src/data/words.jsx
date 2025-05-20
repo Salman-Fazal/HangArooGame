@@ -1,8 +1,1 @@
-export const words = [
-  "react js",
-  "hangaroo game",
-  "frontend developer",
-  "javascript",
-  "local storage",
-  "vite react",
-];
+export const words = ["salman malik", "shan", "shahid", "imran", "ali", "zain"];

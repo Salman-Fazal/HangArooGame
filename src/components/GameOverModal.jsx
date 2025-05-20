@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+const GameOverModal = ({ result, word, onPlayAgain, stats }) => {
+  return (
+    <Modal>
+      <h2>{result === "win" ? "🎉 You Won!" : "😢 You Lost!"}</h2>
+      <p>
+        The word was: <strong>{word}</strong>
+      </p>
+      <p>
+        🏆 Wins: {stats.wins} | ❌ Losses: {stats.losses}
+      </p>
+      <PlayAgainButton onClick={onPlayAgain}>Play Again</PlayAgainButton>
+    </Modal>
+  );
+};
+
+export default GameOverModal;
+
 const Modal = styled.div`
   margin-top: 30px;
   background: #fff;
@@ -19,20 +36,3 @@ const PlayAgainButton = styled.button`
   border-radius: 6px;
   cursor: pointer;
 `;
-
-const GameOverModal = ({ result, word, onPlayAgain, stats }) => {
-  return (
-    <Modal>
-      <h2>{result === "win" ? "🎉 You Won!" : "😢 You Lost!"}</h2>
-      <p>
-        The word was: <strong>{word}</strong>
-      </p>
-      <p>
-        🏆 Wins: {stats.wins} | ❌ Losses: {stats.losses}
-      </p>
-      <PlayAgainButton onClick={onPlayAgain}>Play Again</PlayAgainButton>
-    </Modal>
-  );
-};
-
-export default GameOverModal;
